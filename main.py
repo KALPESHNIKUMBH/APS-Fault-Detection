@@ -1,3 +1,30 @@
+#1
+from sensor.logger import logging
+from sensor.exception import SensorException
+import sys,os
+
+def test_logger_and_exception():
+    try:
+        logging.info("starting the test logger and exception")
+        result = 3/0
+        print(result)
+        logging.info("stoping the test logger and exception")
+    except Exception as e:
+        logging.debug("stoping the test logger and exception")
+        raise SensorException(e, sys)
+
+if __name__ == "__main__":
+    try:
+        test_logger_and_exception()
+    except Exception as e:
+        print(e)
+
+
+
+
+
+
+'''
 import os,sys
 from sensor.exception import SensorException
 from sensor.logger import logging
@@ -18,3 +45,4 @@ if __name__=="__main__":
         print(data_ingestion.initiate_data_ingestion())
     except Exception as e:
         print(e)
+'''
