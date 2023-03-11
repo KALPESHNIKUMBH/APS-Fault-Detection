@@ -25,7 +25,7 @@ class ModelTrainer:
         try:
             #Wite code for Grid Search CV
             pass
-
+            
 
         except Exception as e:
             raise SensorException(e, sys)
@@ -59,7 +59,7 @@ class ModelTrainer:
             logging.info(f"Calculating f1 test score")
             yhat_test = model.predict(x_test)
             f1_test_score  =f1_score(y_true=y_test, y_pred=yhat_test)
-
+            
             logging.info(f"train score:{f1_train_score} and tests score {f1_test_score}")
             #check for overfitting or underfiiting or expected score
             logging.info(f"Checking if our model is underfitting or not")
@@ -85,3 +85,6 @@ class ModelTrainer:
             return model_trainer_artifact
         except Exception as e:
             raise SensorException(e, sys)
+
+
+
